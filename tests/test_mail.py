@@ -53,7 +53,7 @@ class MailSenderTest(unittest.TestCase):
         self.assertEqual(len(payload), 2)
 
         text, attach = payload
-        self.assertEqual(text.get_payload(decode=True), 'body')
+        self.assertEqual(text.get_payload(decode=True), b"body")
         self.assertEqual(attach.get_payload(decode=True), 'content')
 
     def _catch_mail_sent(self, **kwargs):
